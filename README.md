@@ -1,5 +1,3 @@
-# Veritas
-
 MCP study 
 
 ## Comandos
@@ -13,3 +11,4 @@ make dev
 ```bash
 make install uv
 ```
+
