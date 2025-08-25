@@ -56,11 +56,3 @@ def get_user_by_email(email: str) -> Optional[User]:
 def check_email_exists(email: str) -> bool:
     user = get_user_by_email(email)
     return user is not None
-
-
-def get_length_of_users() -> int:
-    try:
-        statement = select(func.count(User.id))
-        return session.exec(statement).first()
-    except Exception:
-        raise DatabaseConnectionError("get_length_of_users")
