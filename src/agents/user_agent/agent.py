@@ -3,7 +3,7 @@ import sys
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.prebuilt import ToolNode
-from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage
+from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 from src.core.settings import settings
 
