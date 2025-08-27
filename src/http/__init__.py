@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
+from .v1.agents import router as agent_router
 from .v1.health import router as health_router
 from .v1.users import router as users_router
-from .v1.agents import router as agent_router
 
 router = APIRouter(prefix="/api/v1")
 
