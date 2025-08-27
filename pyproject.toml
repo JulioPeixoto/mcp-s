@@ -1,7 +1,7 @@
 [project]
-name = "veritas"
+name = "mcp-agent"
 version = "0.1.0"
-description = "MCP study"
+description = "MCP Agent"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
