@@ -1,11 +1,7 @@
-import asyncio
-
-from langchain_core.messages import HumanMessage, SystemMessage
 from langgraph.graph import END, START, MessagesState, StateGraph
 from langgraph.prebuilt import ToolNode
 
 from src.agents.mcp_tools.mcp_client import MCPClient
-from src.agents.prompts import SYSTEM_INSTRUCTIONS
 from src.agents.user_agent.agent import Model
 
 
@@ -43,20 +39,3 @@ class WorkflowManager:
             getattr(last, "additional_kwargs", {}), "get", lambda *_: None
         )("tool_calls")
         return "tools" if tool_calls else END
-
-
-async def main():
-    workflow = WorkflowManager()
-    graph = await workflow.build_graph()
-    out = await graph.ainvoke(
-        {
-            "messages": [
-                SystemMessage(content=SYSTEM_INSTRUCTIONS),
-                HumanMessage(content="O que você pode fazer?"),
-            ]
-        }
-    )
-    print(out["messages"][-1].content)
-
-if __name__ == "__main__":
-    asyncio.run(main())

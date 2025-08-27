@@ -1,6 +1,6 @@
 from uuid import UUID
 
-from src.exceptions.user_exceptions import CreateUserError
+from src.http.exceptions.user_exceptions import CreateUserError
 from src.models.user_model import UserCreate
 from src.queries import user_queries
 

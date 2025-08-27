@@ -5,7 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, func, select
 
 from src.core.database import engine
-from src.exceptions.user_exceptions import (
+from src.http.exceptions.user_exceptions import (
     DatabaseConnectionError,
     UserAlreadyExistsError,
 )
