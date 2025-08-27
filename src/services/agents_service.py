@@ -15,7 +15,7 @@ class AgentsService:
             {
                 "messages": [
                     SystemMessage(content=SYSTEM_INSTRUCTIONS),
-                    HumanMessage(content="O que você pode fazer?"),
+                    HumanMessage(content=messages),
                 ]
             }
         )
