@@ -20,8 +20,8 @@ class UserRead(SQLModel):
     id: UUID
     name: str
     email: str
-    
-    @field_serializer('id')
+
+    @field_serializer("id")
     def serialize_id(self, id: UUID) -> str:
         return str(id)
 
