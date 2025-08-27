@@ -16,4 +16,5 @@ class MathAgentModel:
     def get_client():
         return MathAgentModel().llm
 
+
 math_agent_model = MathAgentModel()

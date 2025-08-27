@@ -7,8 +7,10 @@ from src.services.agents_service import AgentsService
 class AgentRequest(BaseModel):
     messages: str
 
+
 router = APIRouter(tags=["agents"])
 agents_service = AgentsService()
+
 
 @router.post("/agents/completions")
 async def completions(request: AgentRequest):

@@ -81,9 +81,7 @@ class WorkflowManager:
 
         classification_prompt = CLASSIFICATION_PROMPT.format(user_text=user_text)
 
-        messages = [
-            SystemMessage(content=classification_prompt)
-        ]
+        messages = [SystemMessage(content=classification_prompt)]
 
         response = await self.receptor_llm.ainvoke(messages)
         classification = response.content.strip().upper()

@@ -6,3 +6,4 @@ install uv:
 
 format:
 	uv run isort --profile black .
+	uv run black .

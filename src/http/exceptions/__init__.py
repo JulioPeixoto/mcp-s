@@ -14,4 +14,5 @@ def setup_exceptions(app: FastAPI) -> None:
     app.add_exception_handler(IntegrityError, integrity_error_handler)
     app.add_exception_handler(HTTPException, http_exception_handler)
 
+
 __all__ = ["setup_exceptions"]

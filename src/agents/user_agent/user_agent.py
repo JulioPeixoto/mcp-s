@@ -16,4 +16,5 @@ class Model:
     def get_client():
         return Model().llm
 
+
 model = Model()
