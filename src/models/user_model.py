@@ -1,7 +1,8 @@
-from sqlmodel import SQLModel, Field
-from uuid import UUID, uuid4
 from typing import List, Optional
+from uuid import UUID, uuid4
+
 from pydantic import field_serializer
+from sqlmodel import Field, SQLModel
 
 
 class User(SQLModel, table=True):

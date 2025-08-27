@@ -1,12 +1,14 @@
-import sys
 import os
+import sys
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 
-from mcp.server.fastmcp import FastMCP
-from src.queries.user_queries import get_user, get_users
-from src.models.user_model import User
 from typing import List
 
+from mcp.server.fastmcp import FastMCP
+
+from src.models.user_model import User
+from src.queries.user_queries import get_user, get_users
 
 mcp = FastMCP()
 

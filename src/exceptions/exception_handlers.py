@@ -1,7 +1,9 @@
-from fastapi import Request, HTTPException
+from fastapi import HTTPException, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import IntegrityError
+
 from src.exceptions.user_exceptions import BaseAPIException, UserAlreadyExistsError
+
 
 async def base_api_exception_handler(request: Request, exc: BaseAPIException):
     return JSONResponse(

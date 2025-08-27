@@ -1,4 +1,5 @@
-from sqlmodel import SQLModel, create_engine, Session
+from sqlmodel import Session, SQLModel, create_engine
+
 from src.core.settings import settings
 
 DATABASE_URL = settings.database_url

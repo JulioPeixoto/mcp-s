@@ -3,3 +3,6 @@ dev:
 
 install uv:
 	pip install -U pip && pip install uv
+
+format:
+	uv run isort --profile black .

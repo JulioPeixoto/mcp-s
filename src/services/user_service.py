@@ -1,7 +1,9 @@
+from uuid import UUID
+
+from src.exceptions.user_exceptions import CreateUserError
 from src.models.user_model import UserCreate
 from src.queries import user_queries
-from src.exceptions.user_exceptions import CreateUserError
-from uuid import UUID
+
 
 class UserService:
     def __init__(self):

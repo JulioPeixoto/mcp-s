@@ -1,8 +1,10 @@
+from uuid import UUID
+
 from fastapi import APIRouter
+
 from src.exceptions.user_exceptions import UserNotFoundError
 from src.models.user_model import UserCreate, UserRead, UserResponse, UsersListResponse
 from src.services.user_service import UserService
-from uuid import UUID
 
 router = APIRouter(tags=["users"])
 

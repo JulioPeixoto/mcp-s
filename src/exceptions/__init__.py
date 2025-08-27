@@ -1,11 +1,13 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy.exc import IntegrityError
-from .user_exceptions import BaseAPIException
+
 from .exception_handlers import (
     base_api_exception_handler,
+    http_exception_handler,
     integrity_error_handler,
-    http_exception_handler
 )
+from .user_exceptions import BaseAPIException
+
 
 def setup_exceptions(app: FastAPI) -> None:
     app.add_exception_handler(BaseAPIException, base_api_exception_handler)
