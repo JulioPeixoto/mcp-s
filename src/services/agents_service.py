@@ -1,6 +1,3 @@
-from langchain_core.messages import HumanMessage, SystemMessage
-
-from src.agents.prompts import SYSTEM_INSTRUCTIONS
 from src.agents.workflow import WorkflowManager
 
 
@@ -9,17 +6,11 @@ class AgentsService:
         self.workflow = WorkflowManager()
 
     async def invoke(self, messages: str):
-        workflow = WorkflowManager()
-        graph = await workflow.build_graph()
-        out = await graph.ainvoke(
-            {
-                "messages": [
-                    SystemMessage(content=SYSTEM_INSTRUCTIONS),
-                    HumanMessage(content=messages),
-                ]
-            }
-        )
-        return out["messages"][-1]
+        try:
+            result = await self.workflow.route_and_invoke(messages)
+            return result
+        except Exception as e:
+            return f"Erro ao processar mensagem: {str(e)}"
 
 
 agents_service = AgentsService()
