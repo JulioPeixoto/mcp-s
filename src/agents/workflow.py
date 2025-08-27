@@ -52,7 +52,7 @@ async def main():
         {
             "messages": [
                 SystemMessage(content=SYSTEM_INSTRUCTIONS),
-                HumanMessage(content="Quantos usuários ativos temos?"),
+                HumanMessage(content="O que você pode fazer?"),
             ]
         }
     )
