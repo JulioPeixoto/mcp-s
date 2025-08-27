@@ -1,6 +1,7 @@
 import sys
+import os
 
-from langgraph.prebuilt import MultiServerMCPClient
+from langchain_mcp_adapters.client import MultiServerMCPClient
 
 
 class MCPClient:
@@ -8,10 +9,14 @@ class MCPClient:
         self.client = None
 
     async def init_mcp_client(self):
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        server_path = os.path.join(current_dir, "server.py")
+        
         self.client = MultiServerMCPClient({
             "users": {
                 "command": sys.executable,
-                "args": ["src/agents/mcp/server.py"],
+                "args": [server_path],
                 "transport": "stdio",
             }
         })
+        return self.client

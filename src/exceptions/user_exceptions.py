@@ -3,7 +3,6 @@ from typing import Any, Dict, Optional
 from fastapi import HTTPException
 
 
-
 class BaseAPIException(HTTPException):
     def __init__(
         self,
