@@ -1,4 +1,4 @@
-MCP study 
+MCP 
 
 ## Comandos
 
@@ -11,4 +11,5 @@ make dev
 ```bash
 make install uv
 ```
+
 
